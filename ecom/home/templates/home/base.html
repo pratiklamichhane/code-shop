@@ -4,38 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ecom.min.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="logo">EVLEARN</div>
-        <input type="checkbox" id="nav_check" hidden>
-        <nav>
-            <ul>
-                <li>
-                    <a href="" class="active">Home</a>
-                </li>
-                <li>
-                    <a href="">Portfolio</a>
-                </li>
-                <li>
-                    <a href="">Blog</a>
-                </li>
-                <li>
-                    <a href="">Services</a>
-                </li>
-                <li>
-                    <a href="">About</a>
-                </li>
+    <div class="main-navbar">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" bis_skin_checked="1">
+          <a class="navbar-brand" href="#"><i class="ri-braces-fill ri-xl"></i> CODDIZ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor04" bis_skin_checked="1">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SHOP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MY ACCOUNT</a>
+                <div class="dropdown-menu" bis_skin_checked="1">
+                  <a class="dropdown-item"  data-bs-toggle="offcanvas" href="#myaccount" role="button" aria-controls="accountcanvas"><i class="ri-user-line"></i> Profile</a>
+                  <a class="dropdown-item" href="#"><i class="ri-shopping-cart-line"></i> Cart</a>
+                  <a class="dropdown-item" href="#"><i class="ri-truck-line"></i> Orders</a>
+                  <a class="dropdown-item" href="#"><i class="ri-truck-fill"></i> Track My Order</a>
+                  <div class="dropdown-divider" bis_skin_checked="1"></div>
+                  <a class="dropdown-item" href="#"><i class="ri-logout-circle-r-line"></i> Logout</a>
+                </div>
+              </li>
             </ul>
-        </nav>
-        <label for="nav_check" class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
-    </header>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="search" placeholder="Search Products">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="ri-search-line"></i></button>
+            </form>
+            <div class="cart mt-0 mb-0 m-3">
+            <i class="ri-shopping-cart-2-fill ri-2x"></i>
+        </div>
+          </div>
+        </div>
+      </nav>
+{% comment %} Modal side account {% endcomment %}
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="myaccount" aria-labelledby="accountcanvas" bis_skin_checked="1">
+                <div class="offcanvas-header" bis_skin_checked="1">
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <strong><i class="ri-bug-fill ri-2x"></i> Pratikx64</strong></h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  
+                </div>
+                <div class="userprofile mt-0 m-3 mt-0"> 
+                <p>Hey Geek , How's Code?</p>
+                </div>
+                <hr>
+                <h4></h4>
+                <div class="offcanvas-body" bis_skin_checked="1">
+                  <div bis_skin_checked="1">
+                    <h5><i class="ri-store-2-fill"></i> Order details</h5>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-selected="false" role="tab" tabindex="-1"><i class="ri-compass-3-fill"></i> Processing</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="true" role="tab"><i class="ri-shopping-bag-2-fill"></i> Completed</a>
+                        </li>
+                      </ul>
+                      <div id="myTabContent" class="tab-content" bis_skin_checked="1">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel" bis_skin_checked="1">
+                          <p>No order's Processing</p>
+                        </div>
+                        <div class="tab-pane fade " id="profile" role="tabpanel" bis_skin_checked="1">
+                          <div class="order-container mt-4">
+                            <div class="d-flex">
+                            <img src="https://i.pinimg.com/736x/e4/71/16/e4711636871969e8373603b6aa09534e.jpg" alt="" srcset="" width="60px" height="60px">
+                            <div class="price-name-container mt-0 mb-0 m-3">
+                            <p>Stickers Pack - Front End</p>
+                            <p>NPR : 530</p>
+                        </div>
+                        </div>
+                        <hr>
+                        </div>
+                        </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              {% comment %} Modal side account ends {% endcomment %}
+    </div>
+
+
       <script src="{% static 'js/index.js' %}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
