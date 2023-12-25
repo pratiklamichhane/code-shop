@@ -7,13 +7,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/ecom.min.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" type="image/x-icon">
-    <title>Document</title>
+    <title>SINTAX | {% block title %}{% endblock title %}</title>
 </head>
 <body>
     <div class="main-navbar">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" bis_skin_checked="1">
-          <a class="navbar-brand" href="#"><i class="ri-braces-fill ri-xl"></i> CODDIZ</a>
+          <a class="navbar-brand" href="#">S!NTAX</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -115,7 +115,7 @@
               </div>
               {% comment %} Modal side account ends {% endcomment %}
     </div>
-
+{% block body %}{% endblock body %}
 
       <script src="{% static 'js/index.js' %}"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
