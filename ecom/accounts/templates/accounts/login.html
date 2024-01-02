@@ -1,5 +1,29 @@
 {% extends "home/base.html" %}
 {% block title %}Login{% endblock title %}
 {% block body %}
-Login Page
+
+<div class="container">
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="card border-light mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <p class="card-text">
+            <div class="form-group">
+              <label class="form-label mt-4">Login into your account.</label>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="off">
+                <label for="floatingPassword">Password</label>
+              </div>
+              <button class="btn btn-primary mt-3 float-end">Login</button>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text-center">Don't have an account? <strong><a href="#">Sign Up</a></strong></p>
+  
 {% endblock body %}
