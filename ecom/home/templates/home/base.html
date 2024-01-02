@@ -42,7 +42,7 @@
                   <a class="dropdown-item" href="#"><i class="ri-truck-line"></i> Orders</a>
                   <a class="dropdown-item" href="#"><i class="ri-truck-fill"></i> Track My Order</a>
                   <div class="dropdown-divider" bis_skin_checked="1"></div>
-                  <a class="dropdown-item" href="#"><i class="ri-logout-circle-r-line"></i> Logout</a>
+                  <a class="dropdown-item" href="{% url "logout" %}"><i class="ri-logout-circle-r-line"></i> Logout</a>
                 </div>
                 {% else %}
                 <a class="dropdown-item" href="{% url "login" %}"><i class="ri-user-shared-2-fill"></i> Login</a>
@@ -114,7 +114,7 @@
                         <p><i class="ri-e-bike-2-fill"></i> Track My Order</p>
                         <p><i class="ri-shopping-bag-3-fill"></i> Return and Exchange</p>
                       </div>
-                      <button type="button" class="btn btn-danger mt-4">Logout </button>
+                      <a href="{% url "logout" %}"type="button" class="btn btn-danger mt-4">Logout </a>
                   </div>
                 </div>
               </div>

@@ -51,3 +51,7 @@ def signup_page(request):
         return HttpResponseRedirect(request.path_info)
     
     return render(request , 'accounts/signup.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
