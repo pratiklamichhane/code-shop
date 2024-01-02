@@ -36,6 +36,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MY ACCOUNT</a>
                 <div class="dropdown-menu" bis_skin_checked="1">
+                  {% if user.is_authenticated %}
                   <a class="dropdown-item"  data-bs-toggle="offcanvas" href="#myaccount" role="button" aria-controls="accountcanvas"><i class="ri-user-line"></i> Profile</a>
                   <a class="dropdown-item" href="#"><i class="ri-shopping-cart-line"></i> Cart</a>
                   <a class="dropdown-item" href="#"><i class="ri-truck-line"></i> Orders</a>
@@ -43,6 +44,10 @@
                   <div class="dropdown-divider" bis_skin_checked="1"></div>
                   <a class="dropdown-item" href="#"><i class="ri-logout-circle-r-line"></i> Logout</a>
                 </div>
+                {% else %}
+                <a class="dropdown-item" href="{% url "login" %}"><i class="ri-user-shared-2-fill"></i> Login</a>
+                <a class="dropdown-item" href="{% url "signup" %}"><i class="ri-user-add-fill"></i> Sign Up</a>
+                {% endif %}
               </li>
             </ul>
             <form class="d-flex">
@@ -58,12 +63,12 @@
 {% comment %} Modal side account {% endcomment %}
             <div class="offcanvas offcanvas-start" tabindex="-1" id="myaccount" aria-labelledby="accountcanvas" bis_skin_checked="1">
                 <div class="offcanvas-header" bis_skin_checked="1">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <strong><i class="ri-bug-fill ri-2x"></i> Pratikx64</strong></h5>
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <strong><i class="ri-bug-fill ri-2x"></i>Welcome, {{user.first_name}}</strong></h5>
                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                   
                 </div>
                 <div class="userprofile mt-0 m-3 mt-0"> 
-                <p>Hey Geek , How's Code Going?</p>
+                <p>Hey {{user.username}} , How's Code Going?</p>
                 </div>
                 <hr>
                 <h4></h4>
