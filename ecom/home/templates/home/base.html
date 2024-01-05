@@ -10,6 +10,7 @@
     <title>SINTAX | {% block title %}{% endblock title %}</title>
 </head>
 <body>
+
     <div class="main-navbar">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" bis_skin_checked="1">
@@ -50,13 +51,7 @@
                 {% endif %}
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-sm-2" type="search" placeholder="Search Products">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="ri-search-line"></i></button>
-            </form>
-            <div class="cart mt-0 mb-0 m-3">
-            <i class="ri-shopping-cart-2-fill ri-2x"></i>
-        </div>
+            
           </div>
         </div>
       </nav>
@@ -120,6 +115,20 @@
               </div>
               {% comment %} Modal side account ends {% endcomment %}
     </div>
+<div class="second-nav d-flex justify-content-between m-2 mt-1 mb-0">
+  <div>
+    <form class="d-flex">
+      <input class="form-control me-sm-2" type="search" placeholder="Search Products">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="ri-search-line ri-2x"></i></button>
+    </form>
+  </div>
+  <div class="cart">
+    <i class="ri-shopping-bag-3-fill ri-3x"></i>
+  </div>
+</div>
+
+  
+  
 {% block body %}{% endblock body %}
 
       <script src="{% static 'js/index.js' %}"></script>
