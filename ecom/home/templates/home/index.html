@@ -34,13 +34,17 @@
 
   <div class="container">
     <div class="row">
+    {% for product in products %}
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="product-card">
           <div class="card border-light mb-3">
             <div class="card-body">
-              <img src="https://i.ibb.co/ZhLncL3/s-8507-M5-ST6-HWJ6z-L5a-FXwcr-Lsgzssky-U7df-Black-1024x1024.webp" alt="Product Image" class="img-fluid">
-              <h5 class="card-title text-center"><strong>Software development Tshirt</strong></h5>
-              <p class="card-text text-center">NPR: 950 /-</p>
+             
+              <img src="{{product.product_images.first.image}}" alt="Product Image" class="img-fluid">
+              {% comment %} <a href="{% url "getproduct" product.slug %}" class="text-decoration-none"> {% endcomment %}
+              <h5 class="card-title text-center"><strong>{{product.product_name}}</strong></h5>
+              <p class="card-text text-center">NPR:{{product.price}} /-</p>
+            {% comment %} </a> {% endcomment %}
               <div class="div d-flex justify-content-center align-items-center">
               <button class="btn btn-primary text-center">Add to cart <i class="ri-shopping-bag-line ri-xl"></i></button>
             </div>
@@ -48,76 +52,8 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="product-card">
-          <div class="card border-light mb-3">
-            <div class="card-body">
-              <img src="https://i.ibb.co/ZhLncL3/s-8507-M5-ST6-HWJ6z-L5a-FXwcr-Lsgzssky-U7df-Black-1024x1024.webp" alt="Product Image" class="img-fluid">
-              <h5 class="card-title text-center"><strong>Software development Tshirt</strong></h5>
-              <p class="card-text text-center">NPR: 950 /-</p>
-              <div class="div d-flex justify-content-center align-items-center">
-              <button class="btn btn-primary text-center">Add to cart <i class="ri-shopping-bag-line ri-xl"></i></button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="product-card">
-          <div class="card border-light mb-3">
-            <div class="card-body">
-              <img src="https://i.ibb.co/ZhLncL3/s-8507-M5-ST6-HWJ6z-L5a-FXwcr-Lsgzssky-U7df-Black-1024x1024.webp" alt="Product Image" class="img-fluid">
-              <h5 class="card-title text-center"><strong>Software development Tshirt</strong></h5>
-              <p class="card-text text-center">NPR: 950 /-</p>
-              <div class="div d-flex justify-content-center align-items-center">
-              <button class="btn btn-primary text-center">Add to cart <i class="ri-shopping-bag-line ri-xl"></i></button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="product-card">
-          <div class="card border-light mb-3">
-            <div class="card-body">
-              <img src="https://i.ibb.co/ZhLncL3/s-8507-M5-ST6-HWJ6z-L5a-FXwcr-Lsgzssky-U7df-Black-1024x1024.webp" alt="Product Image" class="img-fluid">
-              <h5 class="card-title text-center"><strong>Software development Tshirt</strong></h5>
-              <p class="card-text text-center">NPR: 950 /-</p>
-              <div class="div d-flex justify-content-center align-items-center">
-              <button class="btn btn-primary text-center">Add to cart <i class="ri-shopping-bag-line ri-xl"></i></button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="product-card">
-          <div class="card border-light mb-3">
-            <div class="card-body">
-              <img src="https://i.ibb.co/ZhLncL3/s-8507-M5-ST6-HWJ6z-L5a-FXwcr-Lsgzssky-U7df-Black-1024x1024.webp" alt="Product Image" class="img-fluid">
-              <h5 class="card-title text-center"><strong>Software development Tshirt</strong></h5>
-              <p class="card-text text-center">NPR: 950 /-</p>
-              <div class="div d-flex justify-content-center align-items-center">
-              <button class="btn btn-primary text-center">Add to cart <i class="ri-shopping-bag-line ri-xl"></i></button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="product-card">
-          <div class="card border-light mb-3">
-            <div class="card-body">
-              <img src="https://i.ibb.co/ZhLncL3/s-8507-M5-ST6-HWJ6z-L5a-FXwcr-Lsgzssky-U7df-Black-1024x1024.webp" alt="Product Image" class="img-fluid">
-              <h5 class="card-title text-center"><strong>Software development Tshirt</strong></h5>
-              <p class="card-text text-center">NPR: 950 /-</p>
-              <div class="div d-flex justify-content-center align-items-center">
-              <button class="btn btn-primary text-center">Add to cart <i class="ri-shopping-bag-line ri-xl"></i></button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 </section>
+
 {% comment %} product section ends {% endcomment %}
 {% endblock body %}
