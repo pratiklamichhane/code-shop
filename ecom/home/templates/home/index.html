@@ -9,8 +9,8 @@
         <h1 class="display-3 fw-bold mb-3">Shop For Geeks</h1>
         <p class="fs-4 mb-5">Bored with bugs ? Go shop now!</p>
         <div class="d-grid gap-2 d-sm-flex">
-          <button type="button" class="btn btn-primary bsb-btn-3xl rounded-pill">Shop Now</button>
-          <button type="button" class="btn btn-outline-primary bsb-btn-3xl rounded-pill">Explore</button>
+          <a href="#shopnow" type="button" class="btn btn-primary bsb-btn-3xl rounded-pill">Shop Now</a>
+          <a href="#shopnow" type="button" class="btn btn-outline-primary bsb-btn-3xl rounded-pill">Explore</a>
         </div>
       </div>
       <div class="col-12 col-lg-5 text-center">
@@ -29,21 +29,20 @@
 {% comment %} product section starts {% endcomment %}
 <section class="products m-5">
   <div class="topic-holder text-center">
-    <h1>New Arrivals</h1>
+    <h1 id="shopnow">New Arrivals</h1>
   </div>
 
   <div class="container">
     <div class="row">
     {% for product in products %}
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6"> 
         <div class="product-card">
           <div class="card border-light mb-3">
             <div class="card-body">
-              <a href="{% url "getproduct"%}" class="text-decoration-none">
+              <a href="{% url "getproduct" product.slug%}" class="text-decoration-none">
                 <div class="bg-image hover-zoom">
-              <img src="{{product.product_images.first.image}}" alt="Product Image" class="img-fluid">
+                  <img src="{{ product.product_images.first.image }}" alt="Product Image" class="img-fluid">
             </div>
-              <a href="{% url "getproduct"%}" class="text-decoration-none">
               <h5 class="card-title text-center"><strong>{{product.product_name}}</strong></h5>
               <p class="card-text text-center">NPR:{{product.price}} /-</p>
             </a>
